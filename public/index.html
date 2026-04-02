@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>dogsheet</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Nickname overlay -->
+  <div id="overlay">
+    <div id="overlay-box">
+      <div id="overlay-icon"></div>
+      <h2>Enter your nickname</h2>
+      <p>It will be shown as the cell author.</p>
+      <input type="text" id="nickname-input" placeholder="e.g., doge42" maxlength="30" autocomplete="off">
+      <button id="join-btn">Join</button>
+    </div>
+  </div>
+
+  <!-- Main app -->
+  <div id="app" class="hidden">
+    <!-- Toolbar -->
+    <div id="toolbar">
+      <div id="toolbar-left">
+        <span id="logo">dogsheet</span>
+      </div>
+      <div id="toolbar-center">
+        <input type="text" id="ca-input" value="contractaddress" readonly spellcheck="false">
+      </div>
+      <div id="toolbar-right">
+        <span id="online-count">0 online</span>
+        <button id="image-btn" title="Insert image into selected cell">📷 Image</button>
+        <input type="file" id="image-file" accept="image/*" style="display:none">
+      </div>
+    </div>
+
+    <!-- Sheet -->
+    <div id="sheet-container">
+      <div id="sheet">
+        <table id="grid">
+          <thead id="grid-head"></thead>
+          <tbody id="grid-body"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Status bar -->
+    <div id="statusbar">
+      <span id="status-left"></span>
+      <span id="status-right"></span>
+    </div>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
