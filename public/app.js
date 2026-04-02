@@ -38,17 +38,25 @@
   nicknameInput.focus();
 
   // ========== CONTRACT ADDRESS COPY ==========
+  function flashCopied() {
+    caInput.classList.add('copied');
+    const orig = caInput.value;
+    caInput.value = 'Copied!';
+    setTimeout(() => {
+      caInput.value = orig;
+      caInput.classList.remove('copied');
+    }, 1200);
+  }
+
   caInput.addEventListener('click', () => {
     const text = caInput.value;
-    if (!text || text === 'contractaddress') return;
-    navigator.clipboard.writeText(text).then(() => {
-      caInput.classList.add('copied');
-      const orig = caInput.value;
-      caInput.value = 'Copied!';
-      setTimeout(() => {
-        caInput.value = orig;
-        caInput.classList.remove('copied');
-      }, 1200);
+    if (!text) return;
+    navigator.clipboard.writeText(text).then(flashCopied).catch(() => {
+      caInput.removeAttribute('readonly');
+      caInput.select();
+      document.execCommand('copy');
+      caInput.setAttribute('readonly', '');
+      flashCopied();
     });
   });
 
