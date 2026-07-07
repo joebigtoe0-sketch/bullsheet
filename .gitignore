@@ -1,5 +1,5 @@
 node_modules/
 uploads/
-dogsheet.db
-dogsheet.db-wal
-dogsheet.db-shm
+bullsheet.db
+bullsheet.db-wal
+bullsheet.db-shm

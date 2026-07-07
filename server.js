@@ -17,7 +17,7 @@ if (!fs.existsSync(dataDir)) fs.mkdirSync(dataDir, { recursive: true });
 const uploadsDir = path.join(dataDir, 'uploads');
 if (!fs.existsSync(uploadsDir)) fs.mkdirSync(uploadsDir, { recursive: true });
 
-const db = new Database(path.join(dataDir, 'dogsheet.db'));
+const db = new Database(path.join(dataDir, 'bullsheet.db'));
 db.pragma('journal_mode = WAL');
 
 db.exec(`
@@ -145,5 +145,5 @@ io.on('connection', (socket) => {
 const PORT = process.env.PORT || 3000;
 const HOST = process.env.HOST || '0.0.0.0';
 server.listen(PORT, HOST, () => {
-  console.log(`Dogsheet listening on ${HOST}:${PORT}`);
+  console.log(`Bullsheet listening on ${HOST}:${PORT}`);
 });

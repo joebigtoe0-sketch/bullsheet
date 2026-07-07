@@ -1,5 +1,5 @@
 {
-  "name": "dogsheet",
+  "name": "bullsheet",
   "version": "1.0.0",
   "description": "Real-time collaborative spreadsheet",
   "main": "server.js",
