@@ -1,5 +1,5 @@
 node_modules/
 uploads/
-bullsheet.db
-bullsheet.db-wal
-bullsheet.db-shm
+*.db
+*.db-wal
+*.db-shm
